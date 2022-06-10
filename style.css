@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+}
+
+header {
+    height: 75px;
+    background-color: #1f1e22;
+    color: #c09bca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+body {
+    background-color: #c09bca;
+}
+
+main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main #container {
+    width: 75%;
+    margin: 3rem 0px;
+    padding: 1rem;
+    border: 0px solid;
+    border-radius: 10px;
+    color: #ffe8e1;
+    font-weight: 700;
+    font-size: 1.25rem;
+    background-color: #1f1e22;
+    text-align: center;
+}
+
+main #container #queuer,
+main #container #titles {
+    display: flex;
+    margin: 1.25rem;
+}
+
+main #container #titles {
+    color: #c09bca;
+}
+
+main #container #queuer p:first-child,
+main #container #titles p:first-child {
+    width: 10%;
+    text-align: center;
+}
+
+main #container #queuer p,
+main #container #titles p {
+    width: 45%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
+
+main #join-queue input[type="text"],
+main #join-queue button {
+    background-color: #1f1e22;
+    color: #c09bca;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid #1f1e22;
+    border-radius: 10px;
+}
+
+main #join-queue input[type="text"] {
+    background-color: #1f1e22;
+    color: #ffe8e1;
+}
+
+main #join-queue button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+main #join-queue input[type="text"]::placeholder {
+    color: #ffe8e1;
+    font-style: italic;
+}
+main #join-queue input[type="text"]:focus {
+    outline: none;
+}
+
+main #join-queue-error {
+    margin: 10px;
+    padding: 0.5rem;
+    color: #1f1e22;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    display: none;
+}
+
+.error {
+    background-color: rgba(220, 56, 73, 0.25);
+    border: 2px solid #dc3545;
+}
+
+.success {
+    background-color: rgba(4, 253, 137, 0.5);
+    border: 2px solid #1a6d46;
+}
+
+.remove-from-q {
+    color: #dc3545;
+}
+
+#queuers {
+    margin-top: 15px;
+}
+
+#people-in-queue {
+    margin: 10px;
+    margin-bottom: 40px;
+    padding: 0.5rem;
+    color: #ffe8e1;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
