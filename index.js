@@ -43,8 +43,8 @@ async function getQueuers() {
 }
 
 async function removeFromQueue(name) {
-    await fetch("https://sali-q-list.herokuapp.com/queuers/:name" + "?name=" + name, {
-        method: "DELETE",
+    await fetch("https://sali-q-list.herokuapp.com/remove" + "?name=" + name, {
+        method: "GET",
     });
 
     // Reload page
