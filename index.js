@@ -8,7 +8,7 @@ let AMOUNT; // Stores amount of current queuers
 // observer
 setInterval(function () {
     getQueuers();
-}, 30000);
+}, 10000);
 
 async function getQueuers() {
     // DOM
@@ -20,11 +20,6 @@ async function getQueuers() {
     })
         .then((res) => res.json())
         .then(async (queuers) => {
-            if (AMOUNT == queuers.length) {
-                return;
-            }
-            AMOUNT = queuers.length;
-
             // Queue status
             let queue_status = false;
             await fetch("https://sali-q-list.herokuapp.com/queue/status")
