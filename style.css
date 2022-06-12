@@ -14,7 +14,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 body {
@@ -22,7 +22,6 @@ body {
 }
 
 main {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +30,7 @@ main {
 
 main #container {
     width: 50%;
-    margin: 3rem 0px;
+    margin: 2rem 0px;
     padding: 1rem;
     border: 0px solid;
     border-radius: 10px;
@@ -40,6 +39,30 @@ main #container {
     font-size: 1.25rem;
     background-color: #1f1e22;
     text-align: center;
+}
+
+main #actions {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main #actions div {
+    display: flex;
+    gap: 15px;
+}
+
+main #actions a {
+    background-color: #1f1e22;
+    color: #c09bca;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 main #container #queuer,
@@ -78,7 +101,6 @@ main #container #titles p {
 
 #people-in-queue {
     margin: 10px;
-    margin-bottom: 40px;
     padding: 0.5rem;
     color: #ffe8e1;
     border-radius: 5px;

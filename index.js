@@ -19,16 +19,26 @@ async function getQueuers() {
         headers: { "Content-Type": "application/json" },
     })
         .then((res) => res.json())
-        .then((queuers) => {
+        .then(async (queuers) => {
             if (AMOUNT == queuers.length) {
                 return;
             }
             AMOUNT = queuers.length;
 
+            // Queue status
+            let queue_status = false;
+            await fetch("https://sali-q-list.herokuapp.com/queue/status")
+                .then((res) => res.json())
+                .then((status) => {
+                    queue_status = status ? "OPEN" : "CLOSED";
+                });
+
             // Display people in queue
-            document.querySelector("[data-q='people-in-queue']").innerHTML = AMOUNT == 0 || undefined ? "" : `${AMOUNT} In Queue`;
-            if (queuers.length == 0) element.innerHTML = "No people in queue at the moment...";
-            else {
+            document.querySelector("[data-q='people-in-queue']").innerHTML = AMOUNT == 0 || undefined ? "" : `${AMOUNT} In Queue (${queue_status})`;
+            if (queuers.length == 0) {
+                document.querySelector("[data-q='people-in-queue']").innerHTML = `QUEUE IS ${queue_status}`;
+                element.innerHTML = "No people in queue at the moment...";
+            } else {
                 element.innerHTML = "";
                 queuers.forEach((queuer, index) => {
                     if (index == 2) element.innerHTML += `<hr>`;
@@ -47,6 +57,24 @@ async function removeFromQueue(name) {
         method: "GET",
     });
 
+    // Reload page
+    window.location.reload();
+}
+
+async function openQueue() {
+    await fetch("https://sali-q-list.herokuapp.com/open");
+    // Reload page
+    window.location.reload();
+}
+
+async function closeQueue() {
+    await fetch("https://sali-q-list.herokuapp.com/close");
+    // Reload page
+    window.location.reload();
+}
+
+async function clearQueue() {
+    await fetch("https://sali-q-list.herokuapp.com/clear");
     // Reload page
     window.location.reload();
 }
