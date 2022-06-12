@@ -28,6 +28,8 @@ async function getQueuers() {
                     queue_status = status ? "OPEN" : "CLOSED";
                 });
 
+            AMOUNT = queuers.length;
+
             // Display people in queue
             document.querySelector("[data-q='people-in-queue']").innerHTML = AMOUNT == 0 || undefined ? "" : `${AMOUNT} In Queue (${queue_status})`;
             if (queuers.length == 0) {
