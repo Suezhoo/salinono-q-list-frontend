@@ -75,3 +75,8 @@ async function clearQueue() {
     // Reload page
     window.location.reload();
 }
+
+async function nextTurn() {
+    await fetch("https://sali-q-list.herokuapp.com/queue/next-turn");
+    window.location.reload();
+}
